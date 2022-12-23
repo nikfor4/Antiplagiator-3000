@@ -1,1 +1,0 @@
-# Antiplagiator-3000
