@@ -109,9 +109,9 @@ class MyWidget_R(QMainWindow, Registration):  # регстрация
             if login in logins:  # проверка на существующий логин
                 self.error_txt.setText("Такой логин уже существует")
             if login == "Логин" or login == "":  # проверка введеного имени
-                self.error_txt.setText("Ввeдите совё имя")
-            if password == "Пароль" or password == "":  # проверка введеной фамилии
-                self.error_txt.setText("Ввeдите свою фамилию")
+                self.error_txt.setText("Неверно указанный логин")
+            if password == "Пароль" or password == "":  # проверка введеного пароля
+                self.error_txt.setText("Неверно указанный пароль")
 
             if self.error_txt.text() == "":  # проверка отсутсвия ошибки
                 data = []
