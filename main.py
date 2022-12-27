@@ -86,9 +86,9 @@ class MyWidget_R(QMainWindow, Registration):  # регстрация
         genders = ["gender"]
         if not re.fullmatch(regex, email):  # проверка верности введной почты через регулярное вырадение
             self.error_txt.setText("Неверно указаная почта")
-        if name == "Имя" and name <= 2:  # проверка введеного имени
+        if name == "Имя" and name <= 2 or name == "":  # проверка введеного имени
             self.error_txt.setText("Ввeдите совё имя")
-        if surname == "Фамилия":  # проверка введеной фамилии
+        if surname == "Фамилия" or surname == "":  # проверка введеной фамилии
             self.error_txt.setText("Ввeдите свою фамилию")
         if age == 0:  # проверка введнного возроста
             self.error_txt.setText("Ввeдите свой возраст")
@@ -108,6 +108,10 @@ class MyWidget_R(QMainWindow, Registration):  # регстрация
                 self.error_txt.setText("Данная почта уже указана")
             if login in logins:  # проверка на существующий логин
                 self.error_txt.setText("Такой логин уже существует")
+            if login == "Логин" or login == "":  # проверка введеного имени
+                self.error_txt.setText("Ввeдите совё имя")
+            if password == "Пароль" or password == "":  # проверка введеной фамилии
+                self.error_txt.setText("Ввeдите свою фамилию")
 
             if self.error_txt.text() == "":  # проверка отсутсвия ошибки
                 data = []
